@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
@@ -9,8 +10,6 @@ namespace BSK.Models
 {
     public class Classes
     {
-        //tabele!!!
-        #region ORM Classes
         [Table("Autorzy")]
         public class Autor
         {
@@ -232,6 +231,47 @@ namespace BSK.Models
             public Uprawnienie Uprawnienie { get; set; }
             public Rola Rola { get; set; }
         }
-        #endregion
+        // koniec klas bazy
+        
+        public class LogInOdpowiedz
+        {
+            public string Nazwa { get; set; }
+            public int ID_Uzytkownika { get; set; }
+            public string ID_Sesji { get; set; }
+            public Rola Rola { get; set; }
+            public IEnumerable<Uprawnienie> Uprawnienia { get; set; }
+            public int Data_waznosci { get; set; }
+        }
+
+        public class LogInZapytanie
+        {
+            [Required]
+            public string Login { get; set; }
+            [Required]
+            public string Haslo { get; set; }
+            [Required]
+            public int? Rola { get; set; }
+        }
+
+        public class LogOutZapytanie
+        {
+            public String ID_Sesji { get; set; }
+        }
+
+        public class DB : DbContext
+        {
+            //public DB() : base(nameOrConnectionString: "tutaj wpisać nazwę bazy") { }
+            public DbSet<Autor> Autorzy { get; set; }
+            public DbSet<Dostawa> Dostawy { get; set; }
+            public DbSet<Kategoria> Kategorie { get; set; }
+            public DbSet<Ksiazka> Ksiazki { get; set; }
+            public DbSet<Uprawnienie> Uprawnienia { get; set; }
+            public DbSet<Rola> Rolee { get; set; }
+            public DbSet<Sesja> Sesje { get; set; }
+            public DbSet<Sprzedaz> Sprzedaze { get; set; }
+            public DbSet<Uzytkownik> Uzytkownicy { get; set; }
+            public DbSet<Uzytkownik_Rola> Uzytkownicy_Role { get; set; }
+            public DbSet<Uprawnienie_Rola> Uprawnienia_Role { get; set; }
+        }
     }
 }
