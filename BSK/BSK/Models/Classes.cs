@@ -9,6 +9,7 @@ namespace BSK.Models
 {
     public class Classes
     {
+        //tabele!!!
         #region ORM Classes
         [Table("Autorzy")]
         public class Autor
