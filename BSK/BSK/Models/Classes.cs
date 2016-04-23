@@ -4,6 +4,8 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using System.Web;
 
 namespace BSK.Models
@@ -182,6 +184,18 @@ namespace BSK.Models
         public virtual List<Uzytkownik_Rola> Uzytkownik_Rola { get; set; }
 
         //hashowanie!!!! proponuje wziac jakies inne, np sha3
+
+        public static string sha256(string password)   // źródło: http://stackoverflow.com/questions/12416249/hashing-a-string-with-sha256
+        {
+            SHA256Managed crypt = new SHA256Managed();
+            StringBuilder hash = new StringBuilder();
+            byte[] crypto = crypt.ComputeHash(Encoding.UTF8.GetBytes(password), 0, Encoding.UTF8.GetByteCount(password));
+            foreach (byte theByte in crypto)
+            {
+                hash.Append(theByte.ToString("x2"));
+            }
+            return hash.ToString();
+        }
 
     }
 
