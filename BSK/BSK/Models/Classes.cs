@@ -217,7 +217,7 @@ namespace BSK.Models
         //public virtual Rola Rola { get; set; }
 
         [Column("Data_waznosci")]
-        public int Data_waznosci { get; set; }
+        public long Data_waznosci { get; set; }
     }
 
     [Table("Uzytkownicy_Role")]
@@ -254,7 +254,7 @@ namespace BSK.Models
         public string ID_Sesji { get; set; }
         public Rola Rola { get; set; }
         public IEnumerable<Uprawnienie> Uprawnienia { get; set; }
-        public int Data_waznosci { get; set; }
+        public long Data_waznosci { get; set; }
     }
 
     public class LogInZapytanie
