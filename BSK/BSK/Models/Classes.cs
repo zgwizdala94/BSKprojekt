@@ -274,7 +274,7 @@ namespace BSK.Models
 
     public class DB : DbContext
     {
-        //public DB() : base(nameOrConnectionString: "tutaj wpisać nazwę bazy") { }
+        public DB() : base(nameOrConnectionString: "Ksiegarnia") { }
         public DbSet<Autor> Autorzy { get; set; }
         public DbSet<Dostawa> Dostawy { get; set; }
         public DbSet<Kategoria> Kategorie { get; set; }
