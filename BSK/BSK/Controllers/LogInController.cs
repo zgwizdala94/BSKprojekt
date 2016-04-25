@@ -145,7 +145,7 @@ namespace BSK.Controllers
 
         private static readonly DateTime znak = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
 
-        private static long konwertujNaStempel(DateTime teraz)
+        public static long konwertujNaStempel(DateTime teraz)
         {
             TimeSpan stempel = teraz - znak;
             return stempel.Ticks;
