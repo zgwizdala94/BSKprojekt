@@ -1,55 +1,35 @@
-﻿@{
-    ViewBag.Title = "Home Page";
-}
+﻿<html lang='pl' ng-app>
 
-<div>
-    <h1>Księgarnia bezpieczna</h1>
-    <p class="lead">Witaj w księgarni. Aby przejść do swojego panelu, zaloguj się.</p>
-</div>
-<form class="form-horizontal" role="form">
-    <div class="form-group">
-        <label class="control-label col-sm-2">Login</label>
-        <div class="col-sm-10">
-            <input type="email" class="form-control" id="email" placeholder="Login">
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="control-label col-sm-2" for="pwd">Hasło:</label>
-        <div class="col-sm-10">
-            <input type="password" class="form-control" id="pwd" placeholder="Hasło">
-        </div>
-    </div>
-    
-    <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-            <button type="submit" class="btn btn-primary">Zaloguj</button>
-        </div>
-    </div>
-</form>
+<head>
+    <meta charset="UTF-8">
+    <title>Logowanie</title>
+    <script src="~/Scripts/angular.min.js"></script>
+</head>
 
-<!--
-    
-    TO BYŁO WCZEŚNIEJ - DOMYŚLNE PRZY TWORZENIU APP
-
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+<body>
+    <div>
+        <h1>Księgarnia bezpieczna</h1>
+        <p class="lead">Aby przejść do swojego panelu, zaloguj się.</p>
+        
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
--->
+    <form class="form-horizontal" role="form">
+        <div class="form-group">
+            <label class="control-label col-sm-2">Login</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="text" placeholder="Login" required ng-model="form.login" ng-disabled="roles">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">Hasło:</label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control" id="pwd" placeholder="Hasło">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-primary">Zaloguj</button>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

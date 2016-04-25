@@ -207,11 +207,18 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AutorzyController.cs" />
     <Compile Include="Controllers\DostawyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KategorieController.cs" />
+    <Compile Include="Controllers\KsiazkiController.cs" />
     <Compile Include="Controllers\LogInController.cs" />
     <Compile Include="Controllers\LogOutController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RoleController.cs" />
+    <Compile Include="Controllers\SprzedazeController.cs" />
+    <Compile Include="Controllers\UprawnieniaController.cs" />
+    <Compile Include="Controllers\UzytkownicyController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -249,6 +256,7 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Views\LogIn\LoginCtrl.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -287,8 +295,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\LogIn\" />
+    <Folder Include="Views\Autorzy\" />
+    <Folder Include="Views\Kategorie\" />
+    <Folder Include="Views\Ksiazki\" />
     <Folder Include="Views\LogOut\" />
+    <Folder Include="Views\Role\" />
+    <Folder Include="Views\Sprzedaze\" />
+    <Folder Include="Views\Uprawnienia\" />
+    <Folder Include="Views\Uzytkownicy\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
